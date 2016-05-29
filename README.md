@@ -8,6 +8,7 @@ The only media player that knows your music the way you know it.
 - [Functionality tests](mediaplayer/source_code.py)
 - [File arrangement](filerepo/musicrepo.py)
 - [Filesorting](filesorting.md)
+- [Getting to know you](userlearning.md)
 
 ---
 
