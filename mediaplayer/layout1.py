@@ -1,4 +1,4 @@
-from Tkinter import Tk, RIGHT, BOTH, RAISED, LEFT, CENTER, TOP, BOTTOM
+from Tkinter import Tk, RIGHT, BOTH, RAISED, LEFT, CENTER, TOP, BOTTOM, Listbox
 from ttk import Frame, Button, Style, Progressbar
 import pygame
 from tkFileDialog import askopenfilename
@@ -36,6 +36,7 @@ class ControlDesigns(Frame):
         selectSong.pack(side=RIGHT, padx=5, pady=5)
         stopButton = Button(self, text="Stop", width=4, command=StopMusic)
         stopButton.pack(side=LEFT, padx=5, pady=5)
+
 
 def StopMusic():
         pygame.mixer.music.stop()
