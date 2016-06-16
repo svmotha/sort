@@ -2,26 +2,40 @@ import wx
 
 class WelcomeWindow(wx.Frame):
     def __init__(self, parent, title):
-        wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)
+        wx.Frame.__init__(self, parent, title=title)
+        ##wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)# no outside access
         self.SetBackgroundColour('white')
         self.CreateStatusBar()
         self.create_begin()
 
         # Setting up the menu
         filemenu= wx.Menu()
+        viewmenu = wx.Menu()
+        arrangemenu = wx.Menu()
         menuAbout = filemenu.Append(wx.ID_ABOUT, "&About"," Learn more about Jam arrange")
+        menuload = arrangemenu.Append(wx.ID_ANY, "&Load folder", "Select a folder with your songs to arrange.")
+        menufullscreen = viewmenu.Append(wx.ID_ANY,"&Full screen"," Full screen")
+        menufullscreenexit = viewmenu.Append(wx.ID_ANY,"&Exit full screen"," Exit Full screen")
         menuExit = filemenu.Append(wx.ID_EXIT,"E&xit"," Leave the program :( ")
 
         # Creating the menubar.
         menuBar = wx.MenuBar()
         menuBar.Append(filemenu,"&File") # Adding the "filemenu" to the MenuBar
+        menuBar.Append(viewmenu, "&View")
+        menuBar.Append(arrangemenu, "&Arrange")
+
+
         self.SetMenuBar(menuBar)  # Adding the MenuBar to the Frame content
+        
         # Set events.
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
         self.Bind(wx.EVT_MENU, self.OnExit, menuExit)
+        self.Bind(wx.EVT_MENU, self.Onfullscreen, menufullscreen)
+        self.Bind(wx.EVT_MENU, self.Onfullscreenexit, menufullscreenexit)
 
+        self.Centre()
         self.Show(True)
-        self.Maximize(True)
+##        self.Maximize(True)
 
     # Create and center begin button
     def create_begin(self):
@@ -46,6 +60,12 @@ class WelcomeWindow(wx.Frame):
 
         self.Bind(wx.EVT_BUTTON, self.Onbegin, begin_button)
         
+
+    def Onfullscreen(self,e):
+        self.Maximize(True)
+    
+    def Onfullscreenexit(self,e):
+        self.Maximize(False)
 
     def Onbegin(self,e):
         dlg = wx.MessageDialog( self,
