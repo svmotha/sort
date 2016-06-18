@@ -32,8 +32,10 @@ def collect_audio(target):
     # 4. Path on local storage
     # 5. Track number
     # 6. Total number of tracks on specific album
-    audio_file_deets = [[],[],[],[],[],[]]
+    # 7. Tracking id generation 
+    audio_file_deets = [[],[],[],[],[],[],[]]
     files_not_parsed = []
+    count = 0
     for i in range(len(all_files_in_dir)):
         if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma')) == True:
             temp = target + '\\' + all_files_in_dir[i]
@@ -46,10 +48,12 @@ def collect_audio(target):
                 temp = current_audiofile.tag.track_num
                 audio_file_deets[4].append(temp[0])
                 audio_file_deets[5].append(temp[1])
+                audio_file_deets[6].append(count)
+                count = count + 1
                 audio_files.append(all_files_in_dir[i])
             if current_audiofile == None:
                 files_not_parsed.append(temp)
-    return audio_file_deets, files_not_parsed
+    return audio_file_deets, files_not_parsed, all_files_in_dir
 
 #------------------------------------------------------------------------------
 '''
@@ -165,7 +169,7 @@ def copy_to_arranged(new_dirs, song_locations, folder_titles,
 #------------------------------------------------------------------------------
 '''
 Copy all files that need meta data identification, to a new repository.
-Allowing the audio fingerprinting process to be simplified.
+Allowing the audio fingerprinting process to be simplified and centrallised,
 '''
 
 def copy_all_unknowns():
@@ -179,6 +183,15 @@ def copy_all_unknowns():
 Rename files: If tags i.e. meta data doesn't match visible file name on pc
 it can be difficult for the user to know what song they are looking at.
 '''
+def rename_files():
+    pass
+
+#------------------------------------------------------------------------------
+'''
+File tracking id module
+'''
+def create_tracking_id():
+    pass
 
 #------------------------------------------------------------------------------
                         #------ MAIN CODE ------#
@@ -194,7 +207,6 @@ if __name__ == "__main__":
     copying_songs = copy_to_arranged(create_folders[1], audio_details[0][3],
                                      handle_files[1], handle_files[0],
                                      create_folders[2])
-
 
 
 
