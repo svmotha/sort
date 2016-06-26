@@ -1,4 +1,9 @@
-# -*- coding: cp1252 -*-
+'''
+Jam arrange: GUI linked to arrangement algorithm
+Author: Numstack (Pty) Ltd
+Copyright 2016
+Objective: Through the use of a simple GUI, identify mp3, wav, etc. files and arrange them accordingly in desired local storage folder.
+'''
 
 '''
 Importing all necessary libraries
@@ -82,7 +87,7 @@ class WelcomeWindow(wx.Frame):
 #                                 size=(200,50))
         
 #        begin_button.SetBackgroundColour('#00000')
-        imageFile = "notclicked.png"
+        imageFile = "C:\\Users\User\\Devlopment\\jamarrange.io\\filerepo\\notclicked.png"
         image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
                                        size=(220,60),
@@ -311,5 +316,5 @@ class WelcomeWindow(wx.Frame):
 
 if __name__ == "__main__":
     app = wx.App(False)
-    frame = WelcomeWindow(None, "Jam arrange")
+    frame = WelcomeWindow(None, "Jam arrange v1.0.1")
     app.MainLoop()

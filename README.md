@@ -7,8 +7,9 @@ The only media player that knows your music the way you know it.
 - [Layout design](mediaplayer/layout1.py)
 - [Functionality tests](mediaplayer/source_code.py)
 - [File arrangement](filerepo/musicrepo.py)
-- [Filesorting](filesorting.md)
-- [Getting to know you](userlearning.md)
+- [Filesorting](documentation/filesorting.md)
+- [Getting to know you](documentation/userlearning.md)
+- [Tutorials](tutorials/readme.md)
 
 ---
 
@@ -17,7 +18,7 @@ Identify your music files and arrange them accordingly in a desired local storag
 
 ---
 # About
-![Numstack™ logo](/assets/numstack_logo.png)
+![Numstack™ logo](assets/numstack_logo.png)
 
 This project is continuously created and updated by the Numstack™ team.
 The Numstack team creates applications for people (and the world they live in). They're a group of "academics", that constantly research the impacts of their work on the lives of those around them.
