@@ -1,16 +1,15 @@
 '''
-Jam arrange - Official Api
-                            Objective:
+Jam arrange - Arrangement algorithm
 -----------------------------------------------------------------------------
-Identify mp3, wav, etc. files and arange them accordingly
-in desired local storage folder
+                            Objective:
+    Identify mp3, wav, etc. files and arange them accordingly
+                in desired local storage folder
 -----------------------------------------------------------------------------
 '''
 #------------------------------------------------------------------------------
 '''
 Importing all necessary libraries
 '''
-
 import eyed3
 import os
 import os.path
@@ -22,8 +21,23 @@ import shutil
 '''
 Collect audio files' details in chosen directory
 '''
+
 def collect_audio(target):
-    all_files_in_dir = os.listdir(target)
+    #-----------------------------------------------------------------------
+    '''
+    finding all files in dir and subdir
+    '''
+    root = target
+    path = os.path.join(root, "targetdirectory")
+    all_files_in_dir = []
+    all_files_dir = []
+    for path, subdirs, files in os.walk(root):
+        for name in files:
+            all_files_in_dir.append(name)
+            all_files_dir.append(path)
+    #-----------------------------------------------------------------------
+    
+##    all_files_in_dir = os.listdir(target)
     audio_files = []
                             # Extracted Audio file details 
     # 1. Artist
@@ -38,7 +52,8 @@ def collect_audio(target):
     count = 0
     for i in range(len(all_files_in_dir)):
         if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma')) == True:
-            temp = target + '\\' + all_files_in_dir[i]
+##            temp = target + '\\' + all_files_in_dir[i]
+            temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
             current_audiofile = eyed3.load(temp)
             if current_audiofile != None:
                 audio_file_deets[0].append(current_audiofile.tag.artist)
@@ -53,7 +68,7 @@ def collect_audio(target):
                 audio_files.append(all_files_in_dir[i])
             if current_audiofile == None:
                 files_not_parsed.append(temp)
-    return audio_file_deets, files_not_parsed, all_files_in_dir
+    return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir
 
 #------------------------------------------------------------------------------
 '''
@@ -63,7 +78,7 @@ storage folders.
 
 def music_handling(audio_file_deets):
     artist_names = []
-    # Create artist name folders: os.mkdir(’mydir’)
+    # Create artist name folders: os.mkdir('mydir')
     for i in range(len(audio_file_deets[0])):
         '''
                             NB: Attention!!!!!!!!!!!
@@ -93,7 +108,7 @@ def music_handling(audio_file_deets):
                 folder_titles.append(artist_names[i])
             else:
                 unknown_songs.append(artist_names[i])
-    ##            unknown_songs.append(audio_files[i])
+                unknown_songs.append(audio_files[i])
 
     return artist_names, folder_titles, unknown_songs
 
@@ -199,8 +214,9 @@ def create_tracking_id():
 '''
 MAIN CODE AND MAIN FUNCTION
 '''
+
 if __name__ == "__main__":
-    target = "C:\\Users\\User\\Music\\test folder"
+    target = "C:\\Users\\User\\Music\\test folder2"
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
     create_folders = making_arranged_dir(target, handle_files[1])
