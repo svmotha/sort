@@ -1,29 +1,26 @@
 # -*- coding: cp1252 -*-
-#------------------------------------------------------------------------------
+
 '''
 Importing all necessary libraries
 '''
-import eyed3
+
 import os
 import os.path
 from os import listdir
 from os.path import isfile, join
 import shutil
+from tinytag import TinyTag
 import wx
-#------------------------------------------------------------------------------
 
 class MyFileDropTarget(wx.FileDropTarget):
     """
     Drag and drop file in field
     """
- 
-    #----------------------------------------------------------------------
     def __init__(self, window):
         """Constructor"""
         wx.FileDropTarget.__init__(self)
         self.window = window
- 
-    #----------------------------------------------------------------------
+
     def OnDropFiles(self, x, y, filenames):
         """
         When files are dropped, write where they were dropped and then
@@ -34,15 +31,15 @@ class MyFileDropTarget(wx.FileDropTarget):
                               (len(filenames), x, y))
         for filepath in filenames:
             self.window.updateText(filepath + '\n')
-#------------------------------------------------------------------------------
+
 '''
 Main window for operation
 '''
-#------------------------------------------------------------------------------
+
 class WelcomeWindow(wx.Frame):
     def __init__(self, parent, title):
         wx.Frame.__init__(self, parent, title=title)
-        ##wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)# no outside access
+        # wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)  no outside access
         self.SetBackgroundColour('white')
         self.CreateStatusBar()
         self.create_begin()
@@ -60,10 +57,9 @@ class WelcomeWindow(wx.Frame):
 
         # Creating the menubar.
         menuBar = wx.MenuBar()
-        menuBar.Append(filemenu,"&File") # Adding the "filemenu" to the MenuBar
+        menuBar.Append(filemenu,"&File") # Adding the "file menu" to the MenuBar
         menuBar.Append(viewmenu, "&View")
         menuBar.Append(arrangemenu, "&Arrange")
-
 
         self.SetMenuBar(menuBar)  # Adding the MenuBar to the Frame content
         
@@ -76,16 +72,16 @@ class WelcomeWindow(wx.Frame):
 
         self.Centre()
         self.Show(True)
-##        self.Maximize(True)
+#        self.Maximize(True)
 
     # Create and center begin button : arrange
     def create_begin(self):
-##        panel = wx.Panel(self)
+#        panel = wx.Panel(self)
         main_sizer = wx.BoxSizer(wx.VERTICAL)
-##        begin_button = wx.Button(panel, label="Get started",
-##                                 size=(200,50))
+#        begin_button = wx.Button(panel, label="Get started",
+#                                 size=(200,50))
         
-##        begin_button.SetBackgroundColour('#00000')
+#        begin_button.SetBackgroundColour('#00000')
         imageFile = "notclicked.png"
         image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
@@ -100,15 +96,13 @@ class WelcomeWindow(wx.Frame):
         self.SetSizer(main_sizer)
 
         self.Bind(wx.EVT_BUTTON, self.onDir, begin_button)
-        
-    #-----------------------------------------------------------------------------
+
     '''
     Open operating system directory and select a folder that contains the
     songs you'd like to arrange.
     '''
-    #-----------------------------------------------------------------------------
+
     def onDir(self, event):
-        #-----------------------------------------------------------------------------
         '''
         message box to test if found file dir is one chosen
         '''
@@ -119,45 +113,68 @@ class WelcomeWindow(wx.Frame):
             dlg.ShowModal()
             dlg.Destroy()
 
-        #------------------------------------------------------------------------------
         '''
         Collect audio files' details in chosen directory
         '''
 
         def collect_audio(target):
-            all_files_in_dir = os.listdir(target)
+            '''
+            finding all files in dir and subdir
+            '''
+            root = target
+            path = os.path.join(root, "targetdirectory")
+            all_files_in_dir = []
+            all_files_dir = []
+            for path, subdirs, files in os.walk(root):
+                for name in files:
+                    all_files_in_dir.append(name)
+                    all_files_dir.append(path)
+
             audio_files = []
-                                    # Extracted Audio file details 
-            # 1. Artist
-            # 2. Title (song name)
-            # 3. Album title
-            # 4. Path on local storage
-            # 5. Track number
-            # 6. Total number of tracks on specific album
-            # 7. Tracking id generation 
-            audio_file_deets = [[],[],[],[],[],[],[]]
+            '''
+                                    Extracted Audio file details
+            1. Artist
+            2. Title (song name)
+            3. Album title
+            4. Path on local storage
+            5. Track number
+            6. Total number of tracks on specific album
+            7. Tracking id generation
+            '''
+            audio_file_deets = [[], [], [], [], [], [], []]
             files_not_parsed = []
             count = 0
             for i in range(len(all_files_in_dir)):
-                if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma')) == True:
-                    temp = target + '\\' + all_files_in_dir[i]
-                    current_audiofile = eyed3.load(temp)
-                    if current_audiofile != None:
-                        audio_file_deets[0].append(current_audiofile.tag.artist)
-                        audio_file_deets[1].append(current_audiofile.tag.title)
-                        audio_file_deets[2].append(current_audiofile.tag.album)
+                if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
+                    #            temp = target + '\\' + all_files_in_dir[i]
+                    temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
+                    # current_audiofile = eyed3.load(temp)
+                    current_audiofile = TinyTag.get(temp)
+                    if current_audiofile is not None:
+                        # audio_file_deets[0].append(current_audiofile.tag.artist)
+                        curr_artist = current_audiofile.artist
+                        if curr_artist == '':
+                            curr_artist = None
+                            audio_file_deets[0].append(curr_artist)
+                        else:
+                            audio_file_deets[0].append(curr_artist)
+                        # audio_file_deets[1].append(current_audiofile.tag.title)
+                        audio_file_deets[1].append(current_audiofile.title)
+                        # audio_file_deets[2].append(current_audiofile.tag.album)
+                        audio_file_deets[2].append(current_audiofile.album)
                         audio_file_deets[3].append(temp)
-                        temp = current_audiofile.tag.track_num
-                        audio_file_deets[4].append(temp[0])
-                        audio_file_deets[5].append(temp[1])
+                        # temp = current_audiofile.tag.track_num
+                        # audio_file_deets[4].append(temp[0])
+                        # audio_file_deets[5].append(temp[1])
+                        audio_file_deets[4].append(current_audiofile.track)
+                        audio_file_deets[5].append(current_audiofile.track_total)
                         audio_file_deets[6].append(count)
                         count = count + 1
                         audio_files.append(all_files_in_dir[i])
                     if current_audiofile == None:
                         files_not_parsed.append(temp)
-            return audio_file_deets, files_not_parsed, all_files_in_dir
+            return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir
 
-        #------------------------------------------------------------------------------
         '''
         Making a list of all known artist names to use later when creating song
         storage folders.
@@ -165,21 +182,20 @@ class WelcomeWindow(wx.Frame):
 
         def music_handling(audio_file_deets):
             artist_names = []
-            # Create artist name folders: os.mkdir(’mydir’)
             for i in range(len(audio_file_deets[0])):
                 '''
                                     NB: Attention!!!!!!!!!!!
-                Unicode testin function must enter here once completed:
+                Unicode testing function must enter here once completed:
                 isinstance(a, unicode)
                 '''
-                if audio_file_deets[0][i] != None:
+                if audio_file_deets[0][i] is not None:
                     artist_names.append(str(audio_file_deets[0][i].strip()
                                             .encode('utf-8')))
-                if audio_file_deets[0][i] == None:
+                if audio_file_deets[0][i] is None:
                     artist_names.append(i)
 
             folder_titles = []
-            unknown_songs = []
+            unknown_songs = [[],[]]
 
             for i in range(len(artist_names)):
                 temp = [x for x, val in enumerate(artist_names)
@@ -194,12 +210,11 @@ class WelcomeWindow(wx.Frame):
                     if temp2 == True:
                         folder_titles.append(artist_names[i])
                     else:
-                        unknown_songs.append(artist_names[i])
-            ##            unknown_songs.append(audio_files[i])
+                        unknown_songs[0].append(artist_names[i])
+                        unknown_songs[1].append(audio_file_deets[3][i])
 
             return artist_names, folder_titles, unknown_songs
 
-        #------------------------------------------------------------------------------
         '''
         Make folders for all songs with known artist meta data.
         '''
@@ -208,56 +223,47 @@ class WelcomeWindow(wx.Frame):
             moveto = os.path.join(target, 'Arranged files')
             os.mkdir(os.path.join(target, 'Arranged files'))
             new_dirs = []
-
             for i in range(len(folder_titles)):
-                os.mkdir(os.path.join(moveto , folder_titles[i]))
-                new_dirs.append(os.path.join(moveto , folder_titles[i]))
+                os.mkdir(os.path.join(moveto, folder_titles[i]))
+                new_dirs.append(os.path.join(moveto, folder_titles[i]))
             unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
-            os.mkdir(os.path.join(moveto , 'Unknown artists'))
+            os.mkdir(os.path.join(moveto, 'Unknown artists'))
             return moveto, new_dirs, unknown_dir
 
-        #------------------------------------------------------------------------------
         '''
         Move files to respective folders
         '''
 
-
-        #------------------------------------------------------------------------------
         '''
         Delete files while testing
         '''
+
         def delete_files(moveto):
             user_input = raw_input('''would you like to delete newly created
                                    files: [y/n]\n''')
             if user_input.strip() == 'y':
                 shutil.rmtree(moveto)
 
-
-        #------------------------------------------------------------------------------
         '''
         copy all files to right places
         '''
-        def copy_to_arranged(new_dirs, song_locations, folder_titles,
-                             artist_names, unknown_dir):
+
+        def copy_to_arranged(new_dirs, song_locations, folder_titles, artist_names, unknown_dir):
             for i in range(len(artist_names)):
                 for j in range(len(folder_titles)):
                     str_test = isinstance(artist_names[i], str)
                     if (artist_names[i] == folder_titles[j]) and (str_test == True):
-                        shutil.copy(song_locations[i].strip(),new_dirs[j].strip())
+                        shutil.copy(song_locations[i].strip(), new_dirs[j].strip())
 
-        #------------------------------------------------------------------------------
         '''
         Copy all files that need meta data identification, to a new repository.
         Allowing the audio fingerprinting process to be simplified and centrallised,
         '''
 
-        def copy_all_unknowns():
-            pass
-        ##            if str_test == False :
-        ##                shutil.copy(song_locations[i].strip(),unknown_dir)
-                        
-                
-        #------------------------------------------------------------------------------
+        def copy_all_unknowns(unknown_songs, unknown_dir):
+            for i in range(len(unknown_songs)):
+                shutil.copy(unknown_songs[1][i], unknown_dir)
+
         '''
         Rename files: If tags i.e. meta data doesn't match visible file name on pc
         it can be difficult for the user to know what song they are looking at.
@@ -265,14 +271,6 @@ class WelcomeWindow(wx.Frame):
         def rename_files():
             pass
 
-        #------------------------------------------------------------------------------
-        '''
-        File tracking id module
-        '''
-        def create_tracking_id():
-            pass
-
-        #-----------------------------------------------------------------------------
         """
         Show the DirDialog and print the user's choice to stdout
         """
@@ -282,24 +280,20 @@ class WelcomeWindow(wx.Frame):
                            #| wx.DD_CHANGE_DIR
                            )
         if dlg.ShowModal() == wx.ID_OK:
-            #------------------------------------------------------------------------------
+
             target = str(dlg.GetPath())
+            # Executing arranging algorithm
             audio_details = collect_audio(target)
             handle_files = music_handling(audio_details[0])
             create_folders = making_arranged_dir(target, handle_files[1])
-            copying_songs = copy_to_arranged(create_folders[1], audio_details[0][3],
-                                             handle_files[1], handle_files[0],
-                                             create_folders[2])
-        ##    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
+            copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0],create_folders[2])
+            copy_all_unknowns(handle_files[2], create_folders[2])
 
-
+        #    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
             message = "Your songs have been ARRANGED!!!"
             Onbegin(self,message)
         dlg.Destroy()
 
-    #-----------------------------------------------------------------------------
-
-    #-----------------------------------------------------------------------------
     def Onfullscreen(self,e):
         self.Maximize(True)
     
@@ -314,7 +308,6 @@ class WelcomeWindow(wx.Frame):
         dlg.Destroy() # finally destroy it when finished.
     def OnExit(self,e):
         self.Close(True)  # Close the frame.
-        
 
 if __name__ == "__main__":
     app = wx.App(False)

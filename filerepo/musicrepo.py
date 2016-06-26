@@ -53,7 +53,7 @@ def collect_audio(target):
             temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
             # current_audiofile = eyed3.load(temp)
             current_audiofile = TinyTag.get(temp)
-            if current_audiofile != None:
+            if current_audiofile is not None:
                 # audio_file_deets[0].append(current_audiofile.tag.artist)
                 curr_artist = current_audiofile.artist
                 if curr_artist == '':
@@ -119,6 +119,8 @@ def music_handling(audio_file_deets):
 
     return artist_names, folder_titles, unknown_songs
 
+
+
 '''
 Make folders for all songs with known artist meta data.
 '''
@@ -155,8 +157,7 @@ def delete_files(moveto):
 copy all files to right places
 '''
 
-def copy_to_arranged(new_dirs, song_locations, folder_titles,
-                     artist_names, unknown_dir):
+def copy_to_arranged(new_dirs, song_locations, folder_titles, artist_names, unknown_dir):
     for i in range(len(artist_names)):
         for j in range(len(folder_titles)):
             str_test = isinstance(artist_names[i], str)
