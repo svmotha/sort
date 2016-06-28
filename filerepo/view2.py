@@ -119,6 +119,20 @@ class WelcomeWindow(wx.Frame):
             dlg.Destroy()
 
         '''
+        Repalcing special characters in a dir name
+        '''
+
+        def replace_special_chars(temp):
+            reserved_chars = ['<', '>', ':', '"', '/', '\\', '|', '?', '*']  # see tutorial for explanation
+            if temp is not None:
+                for i in range(len(reserved_chars)):
+                    if reserved_chars[i] in temp:
+                        temp = temp.replace(reserved_chars[i], ' ')
+            else:
+                pass
+            return temp
+
+        '''
         Collect audio files' details in chosen directory
         '''
 
@@ -150,14 +164,15 @@ class WelcomeWindow(wx.Frame):
             files_not_parsed = []
             count = 0
             for i in range(len(all_files_in_dir)):
-                if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
+                if all_files_in_dir[i].endswith(
+                        ('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
                     #            temp = target + '\\' + all_files_in_dir[i]
                     temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
                     # current_audiofile = eyed3.load(temp)
                     current_audiofile = TinyTag.get(temp)
                     if current_audiofile is not None:
                         # audio_file_deets[0].append(current_audiofile.tag.artist)
-                        curr_artist = current_audiofile.artist
+                        curr_artist = replace_special_chars(current_audiofile.artist)
                         if curr_artist == '':
                             curr_artist = None
                             audio_file_deets[0].append(curr_artist)

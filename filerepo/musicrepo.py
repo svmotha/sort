@@ -16,6 +16,20 @@ import shutil
 from tinytag import TinyTag
 
 '''
+Repalcing special characters in a dir name
+'''
+
+def replace_special_chars(temp):
+    reserved_chars = ['<', '>', ':', '"', '/', '\\', '|', '?', '*']  # see tutorial for explanation
+    if temp is not None:
+        for i in range(len(reserved_chars)):
+            if reserved_chars[i] in temp:
+                temp = temp.replace(reserved_chars[i], ' ')
+    else:
+        pass
+    return temp
+
+'''
 Collect audio files' details in chosen directory
 '''
 
@@ -55,7 +69,7 @@ def collect_audio(target):
             current_audiofile = TinyTag.get(temp)
             if current_audiofile is not None:
                 # audio_file_deets[0].append(current_audiofile.tag.artist)
-                curr_artist = current_audiofile.artist
+                curr_artist = replace_special_chars(current_audiofile.artist)
                 if curr_artist == '':
                     curr_artist = None
                     audio_file_deets[0].append(curr_artist)
@@ -186,7 +200,8 @@ MAIN CODE AND MAIN FUNCTION
 '''
 
 if __name__ == "__main__":
-    target = "C:\\Users\\User\\Music\\test folder2"
+##    target = "C:\\Users\\User\\Music\\test folder2"
+    target = "C:\\Users\\User\\Music\\Hip Hop\\Hip Hop Mix"
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
     create_folders = making_arranged_dir(target, handle_files[1])
