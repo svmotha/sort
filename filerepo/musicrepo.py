@@ -16,6 +16,31 @@ import shutil
 from tinytag import TinyTag
 
 '''
+Repalcing special characters in file name
+'''
+
+def replace_special_chars_files(temp):
+    reserved_chars = ['"',"'"]
+    for i in range(len(reserved_chars)):
+        if reserved_chars[i] in temp:
+            temp = temp.replace(reserved_chars[i],' ')
+    return temp
+
+'''
+Repalcing special characters in a dir name
+'''
+
+def replace_special_chars(temp):
+    reserved_chars = ['<', '>', ':', '"', '/', '\\', '|', '?', '*']  # see tutorial for explanation
+    if temp is not None:
+        for i in range(len(reserved_chars)):
+            if reserved_chars[i] in temp:
+                temp = temp.replace(reserved_chars[i], ' ')
+    else:
+        pass
+    return temp
+
+'''
 Collect audio files' details in chosen directory
 '''
 
@@ -29,11 +54,12 @@ def collect_audio(target):
     all_files_dir = []
     for path, subdirs, files in os.walk(root):
         for name in files:
-            all_files_in_dir.append(name)
+            all_files_in_dir.append(replace_special_chars(str(name)))
             all_files_dir.append(path)
 
         ##    all_files_in_dir = os.listdir(target)
     audio_files = []
+    # print all_files_in_dir
     '''
                             Extracted Audio file details
     1. Artist
@@ -49,13 +75,14 @@ def collect_audio(target):
     count = 0
     for i in range(len(all_files_in_dir)):
         if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
-            #            temp = target + '\\' + all_files_in_dir[i]
-            temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
+            # all_files_in_dir[i] = replace_special_chars_files(all_files_in_dir[i])
+            temp = all_files_dir[i] + "\\" + str(all_files_in_dir[i])
+            # print temp
             # current_audiofile = eyed3.load(temp)
             current_audiofile = TinyTag.get(temp)
             if current_audiofile is not None:
                 # audio_file_deets[0].append(current_audiofile.tag.artist)
-                curr_artist = current_audiofile.artist
+                curr_artist = replace_special_chars(current_audiofile.artist)
                 if curr_artist == '':
                     curr_artist = None
                     audio_file_deets[0].append(curr_artist)
@@ -130,8 +157,10 @@ def making_arranged_dir(target, folder_titles):
     os.mkdir(os.path.join(target, 'Arranged files'))
     new_dirs = []
     for i in range(len(folder_titles)):
-        os.mkdir(os.path.join(moveto, folder_titles[i]))
-        new_dirs.append(os.path.join(moveto, folder_titles[i]))
+        temp = str(os.path.join(moveto, folder_titles[i]))
+        if temp.strip().lower() not in new_dirs:
+            os.mkdir(temp.strip())
+            new_dirs.append(temp.strip().lower())
     unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
     os.mkdir(os.path.join(moveto, 'Unknown artists'))
     return moveto, new_dirs, unknown_dir
@@ -158,6 +187,10 @@ copy all files to right places
 '''
 
 def copy_to_arranged(new_dirs, song_locations, folder_titles, artist_names, unknown_dir):
+    print len(artist_names)
+    print '\n'
+    print len(folder_titles)
+    
     for i in range(len(artist_names)):
         for j in range(len(folder_titles)):
             str_test = isinstance(artist_names[i], str)
@@ -170,7 +203,7 @@ Allowing the audio fingerprinting process to be simplified and centrallised,
 '''
 
 def copy_all_unknowns(unknown_songs, unknown_dir):
-    for i in range(len(unknown_songs)):
+    for i in range(len(unknown_songs[1])):
         shutil.copy(unknown_songs[1][i], unknown_dir)
         
 '''
@@ -186,7 +219,9 @@ MAIN CODE AND MAIN FUNCTION
 '''
 
 if __name__ == "__main__":
-    target = "C:\\Users\\User\\Music\\test folder2"
+    # target = "C:\\Users\\User\\Music\\test folder2"
+    # target = "C:\\Users\\User\\Music\\Hip Hop\\2013 Hit singles\\Release 1.1"
+    target = 'C:\\Users\\User\\Music\\Gospel'
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
     create_folders = making_arranged_dir(target, handle_files[1])

@@ -49,38 +49,31 @@ class WelcomeWindow(wx.Frame):
         self.CreateStatusBar()
         self.create_begin()
 
-        # Setting up the menu bars and their various buttons
+        # Setting up the menu
         filemenu= wx.Menu()
-        menuarrange = filemenu.Append(wx.ID_ANY, "&Arrange", "Select a folder with your songs to arrange.")
-        menuAbout = filemenu.Append(wx.ID_ABOUT, "&About", "Learn more about Jam arrange")
-        menuExit = filemenu.Append(wx.ID_EXIT,"E&xit","Leave the program :( ")
+        viewmenu = wx.Menu()
+        arrangemenu = wx.Menu()
+        menuAbout = filemenu.Append(wx.ID_ABOUT, "&About"" Learn more about Jam arrange")
+        menuload = arrangemenu.Append(wx.ID_ANY,
+                                      "&Load folder", "Select a folder with your songs to arrange.")
+        menufullscreen = viewmenu.Append(wx.ID_ANY,"&Full screen"," Full screen")
+        menufullscreenexit = viewmenu.Append(wx.ID_ANY,"&Exit full screen"," Exit Full screen")
+        menuExit = filemenu.Append(wx.ID_EXIT,"E&xit"," Leave the program :( ")
 
-        helpmenu = wx.Menu()
-        menuhelp = helpmenu.Append(wx.ID_HELP, "&Help", "How to use Jam arrange.")
-
-        # viewmenu = wx.Menu()
-        # menufullscreen = viewmenu.Append(wx.ID_ANY,"&Full screen"," Full screen")
-        # menufullscreenexit = viewmenu.Append(wx.ID_ANY,"&Exit full screen"," Exit Full screen")
-
-        # Creating the menu bar
-        # Adding the "file menu" to the MenuBar
+        # Creating the menubar.
         menuBar = wx.MenuBar()
-        menuBar.Append(filemenu,"&File")
-        menuBar.Append(helpmenu, "&Help")
-        # menuBar.Append(viewmenu, "&View")
-
+        menuBar.Append(filemenu,"&File") # Adding the "file menu" to the MenuBar
+        menuBar.Append(viewmenu, "&View")
+        menuBar.Append(arrangemenu, "&Arrange")
 
         self.SetMenuBar(menuBar)  # Adding the MenuBar to the Frame content
         
         # Set events.
-        self.Bind(wx.EVT_MENU, self.onDir, menuarrange)
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
         self.Bind(wx.EVT_MENU, self.OnExit, menuExit)
-
-        self.Bind(wx.EVT_MENU, self.onHelp, menuhelp)
-
-        # self.Bind(wx.EVT_MENU, self.Onfullscreen, menufullscreen)
-        # self.Bind(wx.EVT_MENU, self.Onfullscreenexit, menufullscreenexit)
+        self.Bind(wx.EVT_MENU, self.Onfullscreen, menufullscreen)
+        self.Bind(wx.EVT_MENU, self.Onfullscreenexit, menufullscreenexit)
+        self.Bind(wx.EVT_MENU, self.onDir, menuload)
 
         self.Centre()
         self.Show(True)
@@ -121,7 +114,7 @@ class WelcomeWindow(wx.Frame):
         def Onbegin(self, message):
             dlg = wx.MessageDialog( self,
                                     message,
-                                    "Arrangement successful", wx.OK)
+                                    "Songs being arranged", wx.OK)
             dlg.ShowModal()
             dlg.Destroy()
 
@@ -333,12 +326,8 @@ class WelcomeWindow(wx.Frame):
                                 "About Jam arrange", wx.OK)
         dlg.ShowModal() # Show its
         dlg.Destroy() # finally destroy it when finished.
-
     def OnExit(self,e):
         self.Close(True)  # Close the frame.
-
-    def onHelp(self, e):
-        pass
 
 if __name__ == "__main__":
     app = wx.App(False)
