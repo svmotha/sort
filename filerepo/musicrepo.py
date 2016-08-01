@@ -76,7 +76,7 @@ def collect_audio(target):
     for i in range(len(all_files_in_dir)):
         if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
             # all_files_in_dir[i] = replace_special_chars_files(all_files_in_dir[i])
-            temp = all_files_dir[i] + "\\" + str(all_files_in_dir[i])
+            temp = all_files_dir[i] + "/" + str(all_files_in_dir[i])
             # print temp
             # current_audiofile = eyed3.load(temp)
             current_audiofile = TinyTag.get(temp)
@@ -157,9 +157,10 @@ def making_arranged_dir(target, folder_titles):
     os.mkdir(os.path.join(target, 'Arranged files'))
     new_dirs = []
     for i in range(len(folder_titles)):
-        temp = str(os.path.join(moveto, folder_titles[i]))
+        # temp = str(os.path.join(moveto, folder_titles[i]))
+        temp = os.path.join(moveto, folder_titles[i])
         if temp.strip().lower() not in new_dirs:
-            os.mkdir(temp.strip())
+            os.mkdir(r'temp')
             new_dirs.append(temp.strip().lower())
     unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
     os.mkdir(os.path.join(moveto, 'Unknown artists'))
@@ -221,7 +222,7 @@ MAIN CODE AND MAIN FUNCTION
 if __name__ == "__main__":
     # target = "C:\\Users\\User\\Music\\test folder2"
     # target = "C:\\Users\\User\\Music\\Hip Hop\\2013 Hit singles\\Release 1.1"
-    target = 'C:\\Users\\User\\Music\\Gospel'
+    target = "/home/victor/Music"
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
     create_folders = making_arranged_dir(target, handle_files[1])

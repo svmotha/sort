@@ -43,7 +43,7 @@ Main window for operation
 
 class WelcomeWindow(wx.Frame):
     def __init__(self, parent, title):
-        wx.Frame.__init__(self, parent, title=title)
+        wx.Frame.__init__(self, parent, title=title, size=(400,175))
         # wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)  no outside access
         self.SetBackgroundColour('white')
         self.CreateStatusBar()
@@ -88,17 +88,22 @@ class WelcomeWindow(wx.Frame):
 
     # Create and center begin button : arrange
     def create_begin(self):
-#        panel = wx.Panel(self)
+        panel = wx.Panel(self)
         main_sizer = wx.BoxSizer(wx.VERTICAL)
-#        begin_button = wx.Button(panel, label="Get started",
-#                                 size=(200,50))
-        
-#        begin_button.SetBackgroundColour('#00000')
-        imageFile = "C:\\Users\User\\Devlopment\\jamarrange.io\\filerepo\\notclicked.png"
-        image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
-        begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
-                                       size=(220,60),
-                                       style=wx.RAISED_BORDER)
+        self.SetFont(wx.Font(25,
+                             wx.FONTFAMILY_MODERN,
+                             wx.FONTSTYLE_NORMAL,
+                             wx.FONTWEIGHT_BOLD,
+                             faceName="Roboto"))
+        begin_button = wx.Button(self,id=-1,label="Arrange",size=(200,55),style=wx.RAISED_BORDER)
+        begin_button.SetForegroundColour(wx.Colour(255, 255, 255))
+        begin_button.SetBackgroundColour('#44afd2')
+
+        imageFile = "/home/victor/development/jamarrange.io/filerepo/notclicked.png"
+        # image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+        # begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
+        #                                size=(220,60),
+        #                                style=wx.RAISED_BORDER)
         begin_button.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
         begin_button.SetWindowStyleFlag(wx.RAISED_BORDER)
         
