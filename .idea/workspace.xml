@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11b9b8a-d916-4beb-8102-4a1bd3a3b6d2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filerepo/dircheckingbuild.py" afterPath="$PROJECT_DIR$/filerepo/dircheckingbuild.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filerepo/musicrepo.py" afterPath="$PROJECT_DIR$/filerepo/musicrepo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filerepo/view2.py" afterPath="$PROJECT_DIR$/filerepo/view2.py" />
     </list>
@@ -26,46 +28,82 @@
       <file leaf-file-name="musicrepo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-679">
-              <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+            <state relative-caret-position="1566">
+              <caret line="146" column="11" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="53" />
               <folding>
                 <element signature="e#230#239#0" expanded="true" />
-                <element signature="e#448#624#0" expanded="false" />
-                <element signature="e#715#1021#0" expanded="false" />
-                <element signature="e#3861#5063#0" expanded="false" />
-                <element signature="e#5884#6058#0" expanded="false" />
-                <element signature="e#6194#6558#0" expanded="false" />
-                <element signature="e#6773#6865#0" expanded="false" />
+                <element signature="e#1112#3718#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testrun.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/filerepo/testrun.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+              <folding>
+                <element signature="e#197#240#1" expanded="false" />
+                <element signature="e#388#484#0" expanded="false" />
+                <element signature="e#626#1731#0" expanded="false" />
+                <element signature="e#741#1731#0" expanded="false" />
+                <element signature="e#898#1570#0" expanded="false" />
+                <element signature="e#1621#1731#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="experimentation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audio fingerprinting/experimentation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="107" column="50" selection-start-line="107" selection-start-column="50" selection-end-line="107" selection-end-column="50" />
+            <state relative-caret-position="1062">
+              <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
               <folding>
                 <element signature="e#279#288#0" expanded="true" />
                 <element signature="e#460#1057#0" expanded="false" />
-                <element signature="e#4834#5196#0" expanded="false" />
-                <element signature="e#5327#8235#0" expanded="false" />
-                <element signature="e#8425#9859#0" expanded="false" />
-                <element signature="e#10018#10522#0" expanded="false" />
-                <element signature="e#10696#10894#0" expanded="false" />
-                <element signature="e#11070#11389#0" expanded="false" />
-                <element signature="e#11652#11749#0" expanded="false" />
+                <element signature="e#4892#5254#0" expanded="false" />
+                <element signature="e#5385#8293#0" expanded="false" />
+                <element signature="e#8483#9917#0" expanded="false" />
+                <element signature="e#10076#10580#0" expanded="false" />
+                <element signature="e#10754#10952#0" expanded="false" />
+                <element signature="e#11128#11447#0" expanded="false" />
+                <element signature="e#11710#11807#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_core.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/dist-packages/wx-3.0-gtk2/wx/_core.py">
+      <file leaf-file-name="dircheckingbuild.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filerepo/dircheckingbuild.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="3645" column="0" selection-start-line="3645" selection-start-column="0" selection-end-line="3645" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testpymedia1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mediaplayer/testpymedia1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -73,14 +111,23 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/filerepo/musicrepo.py" />
         <option value="$PROJECT_DIR$/filerepo/view2.py" />
+        <option value="$PROJECT_DIR$/filerepo/dircheckingbuild.py" />
+        <option value="$PROJECT_DIR$/filerepo/musicrepo.py" />
+        <option value="$PROJECT_DIR$/filerepo/testrun.py" />
       </list>
     </option>
   </component>
@@ -115,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -149,14 +195,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jamarrange.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jamarrange.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="audio fingerprinting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.view2">
+  <component name="RunManager" selected="Python.testrun">
     <configuration default="false" name="musicrepo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,6 +231,74 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="jamarrange.io" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filerepo/musicrepo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="view (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mediaplayer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="jamarrange.io" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mediaplayer/view.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testpymedia1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mediaplayer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="jamarrange.io" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mediaplayer/testpymedia1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="layout1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mediaplayer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="jamarrange.io" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mediaplayer/layout1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testrun" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/filerepo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="jamarrange.io" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filerepo/testrun.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -325,13 +454,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.view2" />
       <item index="1" class="java.lang.String" itemvalue="Python.musicrepo" />
+      <item index="2" class="java.lang.String" itemvalue="Python.view (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.testpymedia1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.layout1" />
+      <item index="5" class="java.lang.String" itemvalue="Python.testrun" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.musicrepo" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.testrun" />
+        <item index="1" class="java.lang.String" itemvalue="Python.musicrepo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.testpymedia1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.layout1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.view (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -353,25 +490,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="24" width="1309" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24904507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24904507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44544095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -387,23 +524,270 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" ignoreLibraries="true" exception="BaseException">
+            <option name="ignoreLibraries" value="true" />
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="7" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="CMD_STEP_OVER" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2628">
+          <caret line="146" column="11" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="53" />
+          <folding>
+            <element signature="e#230#239#0" expanded="true" />
+            <element signature="e#1112#3718#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/testrun.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#197#240#1" expanded="false" />
+            <element signature="e#388#484#0" expanded="false" />
+            <element signature="e#626#1731#0" expanded="false" />
+            <element signature="e#741#1731#0" expanded="false" />
+            <element signature="e#898#1570#0" expanded="false" />
+            <element signature="e#1621#1731#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio fingerprinting/experimentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="e#279#288#0" expanded="true" />
+            <element signature="e#460#1057#0" expanded="false" />
+            <element signature="e#4892#5254#0" expanded="false" />
+            <element signature="e#5385#8293#0" expanded="false" />
+            <element signature="e#8483#9917#0" expanded="false" />
+            <element signature="e#10076#10580#0" expanded="false" />
+            <element signature="e#10754#10952#0" expanded="false" />
+            <element signature="e#11128#11447#0" expanded="false" />
+            <element signature="e#11710#11807#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/dircheckingbuild.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/testpymedia1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="144" selection-end-column="63" />
+          <folding>
+            <element signature="e#230#239#0" expanded="true" />
+            <element signature="e#1112#3718#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/testrun.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#197#240#1" expanded="false" />
+            <element signature="e#388#484#0" expanded="false" />
+            <element signature="e#626#1731#0" expanded="false" />
+            <element signature="e#741#1731#0" expanded="false" />
+            <element signature="e#898#1570#0" expanded="false" />
+            <element signature="e#1621#1731#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio fingerprinting/experimentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="e#279#288#0" expanded="true" />
+            <element signature="e#460#1057#0" expanded="false" />
+            <element signature="e#4892#5254#0" expanded="false" />
+            <element signature="e#5385#8293#0" expanded="false" />
+            <element signature="e#8483#9917#0" expanded="false" />
+            <element signature="e#10076#10580#0" expanded="false" />
+            <element signature="e#10754#10952#0" expanded="false" />
+            <element signature="e#11128#11447#0" expanded="false" />
+            <element signature="e#11710#11807#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/dircheckingbuild.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/testpymedia1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#230#239#0" expanded="true" />
-            <element signature="e#448#624#0" expanded="false" />
-            <element signature="e#715#1021#0" expanded="false" />
-            <element signature="e#3861#5063#0" expanded="false" />
-            <element signature="e#5884#6058#0" expanded="false" />
-            <element signature="e#6194#6558#0" expanded="false" />
-            <element signature="e#6773#6865#0" expanded="false" />
+            <element signature="e#1112#3718#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio fingerprinting/experimentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="e#279#288#0" expanded="true" />
+            <element signature="e#460#1057#0" expanded="false" />
+            <element signature="e#4892#5254#0" expanded="false" />
+            <element signature="e#5385#8293#0" expanded="false" />
+            <element signature="e#8483#9917#0" expanded="false" />
+            <element signature="e#10076#10580#0" expanded="false" />
+            <element signature="e#10754#10952#0" expanded="false" />
+            <element signature="e#11128#11447#0" expanded="false" />
+            <element signature="e#11710#11807#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/dircheckingbuild.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/testpymedia1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2916">
+          <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+          <folding>
+            <element signature="e#230#239#0" expanded="true" />
+            <element signature="e#1112#3718#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#279#288#0" expanded="true" />
+            <element signature="e#460#1057#0" expanded="false" />
+            <element signature="e#4892#5254#0" expanded="false" />
+            <element signature="e#5385#8293#0" expanded="false" />
+            <element signature="e#8483#9917#0" expanded="false" />
+            <element signature="e#10076#10580#0" expanded="false" />
+            <element signature="e#10754#10952#0" expanded="false" />
+            <element signature="e#11128#11447#0" expanded="false" />
+            <element signature="e#11710#11807#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/wx-3.0-gtk2/wx/_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65610">
+          <caret line="3645" column="0" selection-start-line="3645" selection-start-column="0" selection-end-line="3645" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#230#239#0" expanded="true" />
+            <element signature="e#1112#3718#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -414,12 +798,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#230#239#0" expanded="true" />
-            <element signature="e#448#624#0" expanded="false" />
-            <element signature="e#715#1021#0" expanded="false" />
-            <element signature="e#3861#5063#0" expanded="false" />
-            <element signature="e#5884#6058#0" expanded="false" />
-            <element signature="e#6194#6558#0" expanded="false" />
-            <element signature="e#6773#6865#0" expanded="false" />
+            <element signature="e#1112#3718#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -452,42 +831,128 @@
     </entry>
     <entry file="file:///usr/lib/python2.7/dist-packages/wx-3.0-gtk2/wx/_core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
+        <state relative-caret-position="-90">
           <caret line="3645" column="0" selection-start-line="3645" selection-start-column="0" selection-end-line="3645" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="1555" column="0" selection-start-line="1555" selection-start-column="0" selection-end-line="1555" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/gridtest1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/layout1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="e#279#288#0" expanded="true" />
+            <element signature="e#460#1057#0" expanded="false" />
+            <element signature="e#4892#5254#0" expanded="false" />
+            <element signature="e#5385#8293#0" expanded="false" />
+            <element signature="e#8483#9917#0" expanded="false" />
+            <element signature="e#10076#10580#0" expanded="false" />
+            <element signature="e#10754#10952#0" expanded="false" />
+            <element signature="e#11128#11447#0" expanded="false" />
+            <element signature="e#11710#11807#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filerepo/dircheckingbuild.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio fingerprinting/experimentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediaplayer/testpymedia1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filerepo/musicrepo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-679">
-          <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+        <state relative-caret-position="1566">
+          <caret line="146" column="11" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="53" />
           <folding>
             <element signature="e#230#239#0" expanded="true" />
-            <element signature="e#448#624#0" expanded="false" />
-            <element signature="e#715#1021#0" expanded="false" />
-            <element signature="e#3861#5063#0" expanded="false" />
-            <element signature="e#5884#6058#0" expanded="false" />
-            <element signature="e#6194#6558#0" expanded="false" />
-            <element signature="e#6773#6865#0" expanded="false" />
+            <element signature="e#1112#3718#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filerepo/view2.py">
+    <entry file="file://$PROJECT_DIR$/filerepo/testrun.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="107" column="50" selection-start-line="107" selection-start-column="50" selection-end-line="107" selection-end-column="50" />
+        <state relative-caret-position="423">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
           <folding>
-            <element signature="e#279#288#0" expanded="true" />
-            <element signature="e#460#1057#0" expanded="false" />
-            <element signature="e#4834#5196#0" expanded="false" />
-            <element signature="e#5327#8235#0" expanded="false" />
-            <element signature="e#8425#9859#0" expanded="false" />
-            <element signature="e#10018#10522#0" expanded="false" />
-            <element signature="e#10696#10894#0" expanded="false" />
-            <element signature="e#11070#11389#0" expanded="false" />
-            <element signature="e#11652#11749#0" expanded="false" />
+            <element signature="e#197#240#1" expanded="false" />
+            <element signature="e#388#484#0" expanded="false" />
+            <element signature="e#626#1731#0" expanded="false" />
+            <element signature="e#741#1731#0" expanded="false" />
+            <element signature="e#898#1570#0" expanded="false" />
+            <element signature="e#1621#1731#0" expanded="false" />
           </folding>
         </state>
       </provider>

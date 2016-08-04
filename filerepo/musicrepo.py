@@ -159,8 +159,9 @@ def making_arranged_dir(target, folder_titles):
     for i in range(len(folder_titles)):
         # temp = str(os.path.join(moveto, folder_titles[i]))
         temp = os.path.join(moveto, folder_titles[i])
+        # temp = str(moveto +"//" + str(folder_titles[i]))
         if temp.strip().lower() not in new_dirs:
-            os.mkdir(r'temp')
+            os.mkdir(temp)
             new_dirs.append(temp.strip().lower())
     unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
     os.mkdir(os.path.join(moveto, 'Unknown artists'))
@@ -225,8 +226,8 @@ if __name__ == "__main__":
     target = "/home/victor/Music"
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
-    create_folders = making_arranged_dir(target, handle_files[1])
-    copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0], create_folders[2])
-    copy_all_unknowns(handle_files[2], create_folders[2])
+    # create_folders = making_arranged_dir(target, handle_files[1])
+    # copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0], create_folders[2])
+    # copy_all_unknowns(handle_files[2], create_folders[2])
 
 ##    delete_arrangement = delete_files(create_folders[0]) #Delete demo files

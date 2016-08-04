@@ -88,7 +88,7 @@ class WelcomeWindow(wx.Frame):
 
     # Create and center begin button : arrange
     def create_begin(self):
-        panel = wx.Panel(self)
+        # panel = wx.Panel(self)
         main_sizer = wx.BoxSizer(wx.VERTICAL)
         self.SetFont(wx.Font(25,
                              wx.FONTFAMILY_MODERN,
@@ -97,9 +97,10 @@ class WelcomeWindow(wx.Frame):
                              faceName="Roboto"))
         begin_button = wx.Button(self,id=-1,label="Arrange",size=(200,55),style=wx.RAISED_BORDER)
         begin_button.SetForegroundColour(wx.Colour(255, 255, 255))
-        begin_button.SetBackgroundColour('#44afd2')
+        begin_button.SetBackgroundColour('#5f9ad8')
+        # begin_button.SetBackgroundColour('#5f9ad8')
 
-        imageFile = "/home/victor/development/jamarrange.io/filerepo/notclicked.png"
+        # imageFile = "/home/victor/development/jamarrange.io/filerepo/notclicked.png"
         # image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         # begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
         #                                size=(220,60),
