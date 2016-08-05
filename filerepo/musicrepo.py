@@ -56,10 +56,7 @@ def collect_audio(target):
         for name in files:
             all_files_in_dir.append(replace_special_chars(str(name)))
             all_files_dir.append(path)
-
-        ##    all_files_in_dir = os.listdir(target)
     audio_files = []
-    # print all_files_in_dir
     '''
                             Extracted Audio file details
     1. Artist
@@ -75,27 +72,18 @@ def collect_audio(target):
     count = 0
     for i in range(len(all_files_in_dir)):
         if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
-            # all_files_in_dir[i] = replace_special_chars_files(all_files_in_dir[i])
-            temp = all_files_dir[i] + "/" + str(all_files_in_dir[i])
-            # print temp
-            # current_audiofile = eyed3.load(temp)
+            temp = os.path.join(all_files_dir[i],str(all_files_in_dir[i]))
             current_audiofile = TinyTag.get(temp)
             if current_audiofile is not None:
-                # audio_file_deets[0].append(current_audiofile.tag.artist)
                 curr_artist = replace_special_chars(current_audiofile.artist)
                 if curr_artist == '':
                     curr_artist = None
                     audio_file_deets[0].append(curr_artist)
                 else:
                     audio_file_deets[0].append(curr_artist)
-                # audio_file_deets[1].append(current_audiofile.tag.title)
                 audio_file_deets[1].append(current_audiofile.title)
-                # audio_file_deets[2].append(current_audiofile.tag.album)
                 audio_file_deets[2].append(current_audiofile.album)
                 audio_file_deets[3].append(temp)
-                # temp = current_audiofile.tag.track_num
-                # audio_file_deets[4].append(temp[0])
-                # audio_file_deets[5].append(temp[1])
                 audio_file_deets[4].append(current_audiofile.track)
                 audio_file_deets[5].append(current_audiofile.track_total)
                 audio_file_deets[6].append(count)
@@ -157,12 +145,9 @@ def making_arranged_dir(target, folder_titles):
     os.mkdir(os.path.join(target, 'Arranged files'))
     new_dirs = []
     for i in range(len(folder_titles)):
-        # temp = str(os.path.join(moveto, folder_titles[i]))
         temp = os.path.join(moveto, folder_titles[i])
-        # temp = str(moveto +"//" + str(folder_titles[i]))
         if temp.strip().lower() not in new_dirs:
             os.mkdir(temp)
-##            new_dirs.append(temp.strip().lower())
             new_dirs.append(temp.strip())
     unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
     os.mkdir(os.path.join(moveto, 'Unknown artists'))

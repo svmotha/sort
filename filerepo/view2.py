@@ -130,7 +130,6 @@ class WelcomeWindow(wx.Frame):
                                     "Arrangement successful", wx.OK)
             dlg.ShowModal()
             dlg.Destroy()
-
         '''
         Repalcing special characters in a dir name
         '''
@@ -159,9 +158,8 @@ class WelcomeWindow(wx.Frame):
             all_files_dir = []
             for path, subdirs, files in os.walk(root):
                 for name in files:
-                    all_files_in_dir.append(name)
+                    all_files_in_dir.append(replace_special_chars(str(name)))
                     all_files_dir.append(path)
-
             audio_files = []
             '''
                                     Extracted Audio file details
@@ -177,28 +175,19 @@ class WelcomeWindow(wx.Frame):
             files_not_parsed = []
             count = 0
             for i in range(len(all_files_in_dir)):
-                if all_files_in_dir[i].endswith(
-                        ('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
-                    #            temp = target + '\\' + all_files_in_dir[i]
-                    temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
-                    # current_audiofile = eyed3.load(temp)
+                if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
+                    temp = os.path.join(all_files_dir[i],str(all_files_in_dir[i]))
                     current_audiofile = TinyTag.get(temp)
                     if current_audiofile is not None:
-                        # audio_file_deets[0].append(current_audiofile.tag.artist)
                         curr_artist = replace_special_chars(current_audiofile.artist)
                         if curr_artist == '':
                             curr_artist = None
                             audio_file_deets[0].append(curr_artist)
                         else:
                             audio_file_deets[0].append(curr_artist)
-                        # audio_file_deets[1].append(current_audiofile.tag.title)
                         audio_file_deets[1].append(current_audiofile.title)
-                        # audio_file_deets[2].append(current_audiofile.tag.album)
                         audio_file_deets[2].append(current_audiofile.album)
                         audio_file_deets[3].append(temp)
-                        # temp = current_audiofile.tag.track_num
-                        # audio_file_deets[4].append(temp[0])
-                        # audio_file_deets[5].append(temp[1])
                         audio_file_deets[4].append(current_audiofile.track)
                         audio_file_deets[5].append(current_audiofile.track_total)
                         audio_file_deets[6].append(count)
@@ -208,6 +197,7 @@ class WelcomeWindow(wx.Frame):
                         files_not_parsed.append(temp)
             return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir
 
+        
         '''
         Making a list of all known artist names to use later when creating song
         storage folders.
