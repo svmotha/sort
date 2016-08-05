@@ -71,7 +71,7 @@ class WelcomeWindow(wx.Frame):
 
 
         self.SetMenuBar(menuBar)  # Adding the MenuBar to the Frame content
-        
+
         # Set events.
         self.Bind(wx.EVT_MENU, self.onDir, menuarrange)
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
@@ -107,7 +107,7 @@ class WelcomeWindow(wx.Frame):
         #                                style=wx.RAISED_BORDER)
         begin_button.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
         begin_button.SetWindowStyleFlag(wx.RAISED_BORDER)
-        
+
         main_sizer.AddStretchSpacer()
         main_sizer.Add(begin_button, 0, wx.CENTER)
         main_sizer.AddStretchSpacer()
@@ -197,7 +197,7 @@ class WelcomeWindow(wx.Frame):
                         files_not_parsed.append(temp)
             return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir
 
-        
+
         '''
         Making a list of all known artist names to use later when creating song
         storage folders.
@@ -319,7 +319,7 @@ class WelcomeWindow(wx.Frame):
 
     def Onfullscreen(self,e):
         self.Maximize(True)
-    
+
     def Onfullscreenexit(self,e):
         self.Maximize(False)
 
