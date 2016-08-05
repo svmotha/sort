@@ -226,7 +226,7 @@ if __name__ == "__main__":
     target = "/home/victor/Music"
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
-    # create_folders = making_arranged_dir(target, handle_files[1])
+    create_folders = making_arranged_dir(target, handle_files[1])
     # copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0], create_folders[2])
     # copy_all_unknowns(handle_files[2], create_folders[2])
 

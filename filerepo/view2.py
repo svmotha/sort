@@ -46,7 +46,7 @@ class WelcomeWindow(wx.Frame):
         wx.Frame.__init__(self, parent, title=title, size=(400,175))
         # wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)  no outside access
         self.SetBackgroundColour('white')
-        self.CreateStatusBar()
+##        self.CreateStatusBar()
         self.create_begin()
 
         # Setting up the menu bars and their various buttons

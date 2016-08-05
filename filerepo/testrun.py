@@ -86,3 +86,18 @@ for i in range(len(artist_names)):
             unknown_songs[1].append(audio_file_deets[3][i])
 
 handle_files = [artist_names, folder_titles, unknown_songs]
+
+moveto = os.path.join(target, 'Arranged files')
+os.mkdir(os.path.join(target, 'Arranged files'))
+new_dirs = []
+for i in range(len(folder_titles)):
+    # temp = str(os.path.join(moveto, folder_titles[i]))
+    temp = os.path.join(moveto, folder_titles[i])
+    # temp = str(moveto +"//" + str(folder_titles[i]))
+    if temp.strip().lower() not in new_dirs:
+        os.mkdir(temp)
+        new_dirs.append(temp.strip().lower())
+unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
+os.mkdir(os.path.join(moveto, 'Unknown artists'))
+
+create_folders = [moveto, new_dirs, unknown_dir]
