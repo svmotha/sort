@@ -16,6 +16,7 @@ from os.path import isfile, join
 import shutil
 from tinytag import TinyTag
 import wx
+from wx.lib.buttons import GenButton
 
 class MyFileDropTarget(wx.FileDropTarget):
     """
@@ -88,15 +89,17 @@ class WelcomeWindow(wx.Frame):
 
     # Create and center begin button : arrange
     def create_begin(self):
-        # panel = wx.Panel(self)
+        #panel = wx.Panel(self)
         main_sizer = wx.BoxSizer(wx.VERTICAL)
         self.SetFont(wx.Font(25,
                              wx.FONTFAMILY_MODERN,
                              wx.FONTSTYLE_NORMAL,
                              wx.FONTWEIGHT_BOLD,
                              faceName="Roboto"))
-        begin_button = wx.Button(self,id=-1,label="Arrange",size=(200,55),style=wx.RAISED_BORDER)
+        #begin_button = wx.Button(self,id=-1,label="Arrange",size=(200,55),style=wx.RAISED_BORDER)
+        begin_button = GenButton(self,id=-1,label="Arrange",size=(200,55),style=wx.BORDER_SIMPLE)
         begin_button.SetForegroundColour(wx.Colour(255, 255, 255))
+        begin_button.SetBezelWidth(1)
         begin_button.SetBackgroundColour('#5f9ad8')
         # begin_button.SetBackgroundColour('#5f9ad8')
 
@@ -247,8 +250,10 @@ class WelcomeWindow(wx.Frame):
             os.mkdir(os.path.join(target, 'Arranged files'))
             new_dirs = []
             for i in range(len(folder_titles)):
-                os.mkdir(os.path.join(moveto, folder_titles[i]))
-                new_dirs.append(os.path.join(moveto, folder_titles[i]))
+                temp = os.path.join(moveto, folder_titles[i])
+                if temp.strip().lower() not in new_dirs:
+                    os.mkdir(temp)
+                    new_dirs.append(temp.strip())
             unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
             os.mkdir(os.path.join(moveto, 'Unknown artists'))
             return moveto, new_dirs, unknown_dir
@@ -256,6 +261,8 @@ class WelcomeWindow(wx.Frame):
         '''
         Move files to respective folders
         '''
+        def movefiles():
+            pass
 
         '''
         Delete files while testing
@@ -284,7 +291,7 @@ class WelcomeWindow(wx.Frame):
         '''
 
         def copy_all_unknowns(unknown_songs, unknown_dir):
-            for i in range(len(unknown_songs)):
+            for i in range(len(unknown_songs[1])):
                 shutil.copy(unknown_songs[1][i], unknown_dir)
 
         '''

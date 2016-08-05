@@ -43,37 +43,44 @@ Main window for operation
 
 class WelcomeWindow(wx.Frame):
     def __init__(self, parent, title):
-        wx.Frame.__init__(self, parent, title=title)
+        wx.Frame.__init__(self, parent, title=title, size=(400,175))
         # wx.Frame.__init__(self, parent, title=title, style=wx.RAISED_BORDER)  no outside access
         self.SetBackgroundColour('white')
-        self.CreateStatusBar()
+##        self.CreateStatusBar()
         self.create_begin()
 
-        # Setting up the menu
+        # Setting up the menu bars and their various buttons
         filemenu= wx.Menu()
-        viewmenu = wx.Menu()
-        arrangemenu = wx.Menu()
-        menuAbout = filemenu.Append(wx.ID_ABOUT, "&About"" Learn more about Jam arrange")
-        menuload = arrangemenu.Append(wx.ID_ANY,
-                                      "&Load folder", "Select a folder with your songs to arrange.")
-        menufullscreen = viewmenu.Append(wx.ID_ANY,"&Full screen"," Full screen")
-        menufullscreenexit = viewmenu.Append(wx.ID_ANY,"&Exit full screen"," Exit Full screen")
-        menuExit = filemenu.Append(wx.ID_EXIT,"E&xit"," Leave the program :( ")
+        menuarrange = filemenu.Append(wx.ID_ANY, "&Arrange", "Select a folder with your songs to arrange.")
+        menuAbout = filemenu.Append(wx.ID_ABOUT, "&About", "Learn more about Jam arrange")
+        menuExit = filemenu.Append(wx.ID_EXIT,"E&xit","Leave the program :( ")
 
-        # Creating the menubar.
+        helpmenu = wx.Menu()
+        menuhelp = helpmenu.Append(wx.ID_HELP, "&Help", "How to use Jam arrange.")
+
+        # viewmenu = wx.Menu()
+        # menufullscreen = viewmenu.Append(wx.ID_ANY,"&Full screen"," Full screen")
+        # menufullscreenexit = viewmenu.Append(wx.ID_ANY,"&Exit full screen"," Exit Full screen")
+
+        # Creating the menu bar
+        # Adding the "file menu" to the MenuBar
         menuBar = wx.MenuBar()
-        menuBar.Append(filemenu,"&File") # Adding the "file menu" to the MenuBar
-        menuBar.Append(viewmenu, "&View")
-        menuBar.Append(arrangemenu, "&Arrange")
+        menuBar.Append(filemenu,"&File")
+        menuBar.Append(helpmenu, "&Help")
+        # menuBar.Append(viewmenu, "&View")
+
 
         self.SetMenuBar(menuBar)  # Adding the MenuBar to the Frame content
-        
+
         # Set events.
+        self.Bind(wx.EVT_MENU, self.onDir, menuarrange)
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
         self.Bind(wx.EVT_MENU, self.OnExit, menuExit)
-        self.Bind(wx.EVT_MENU, self.Onfullscreen, menufullscreen)
-        self.Bind(wx.EVT_MENU, self.Onfullscreenexit, menufullscreenexit)
-        self.Bind(wx.EVT_MENU, self.onDir, menuload)
+
+        self.Bind(wx.EVT_MENU, self.onHelp, menuhelp)
+
+        # self.Bind(wx.EVT_MENU, self.Onfullscreen, menufullscreen)
+        # self.Bind(wx.EVT_MENU, self.Onfullscreenexit, menufullscreenexit)
 
         self.Centre()
         self.Show(True)
@@ -81,20 +88,26 @@ class WelcomeWindow(wx.Frame):
 
     # Create and center begin button : arrange
     def create_begin(self):
-#        panel = wx.Panel(self)
+        # panel = wx.Panel(self)
         main_sizer = wx.BoxSizer(wx.VERTICAL)
-#        begin_button = wx.Button(panel, label="Get started",
-#                                 size=(200,50))
-        
-#        begin_button.SetBackgroundColour('#00000')
-        imageFile = "C:\\Users\User\\Devlopment\\jamarrange.io\\filerepo\\notclicked.png"
-        image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
-        begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
-                                       size=(220,60),
-                                       style=wx.RAISED_BORDER)
+        self.SetFont(wx.Font(25,
+                             wx.FONTFAMILY_MODERN,
+                             wx.FONTSTYLE_NORMAL,
+                             wx.FONTWEIGHT_BOLD,
+                             faceName="Roboto"))
+        begin_button = wx.Button(self,id=-1,label="Arrange",size=(200,55),style=wx.RAISED_BORDER)
+        begin_button.SetForegroundColour(wx.Colour(255, 255, 255))
+        begin_button.SetBackgroundColour('#5f9ad8')
+        # begin_button.SetBackgroundColour('#5f9ad8')
+
+        # imageFile = "/home/victor/development/jamarrange.io/filerepo/notclicked.png"
+        # image1 = wx.Image(imageFile, wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+        # begin_button = wx.BitmapButton(self,id=-1,bitmap=image1,
+        #                                size=(220,60),
+        #                                style=wx.RAISED_BORDER)
         begin_button.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
         begin_button.SetWindowStyleFlag(wx.RAISED_BORDER)
-        
+
         main_sizer.AddStretchSpacer()
         main_sizer.Add(begin_button, 0, wx.CENTER)
         main_sizer.AddStretchSpacer()
@@ -114,10 +127,9 @@ class WelcomeWindow(wx.Frame):
         def Onbegin(self, message):
             dlg = wx.MessageDialog( self,
                                     message,
-                                    "Songs being arranged", wx.OK)
+                                    "Arrangement successful", wx.OK)
             dlg.ShowModal()
             dlg.Destroy()
-
         '''
         Repalcing special characters in a dir name
         '''
@@ -146,9 +158,8 @@ class WelcomeWindow(wx.Frame):
             all_files_dir = []
             for path, subdirs, files in os.walk(root):
                 for name in files:
-                    all_files_in_dir.append(name)
+                    all_files_in_dir.append(replace_special_chars(str(name)))
                     all_files_dir.append(path)
-
             audio_files = []
             '''
                                     Extracted Audio file details
@@ -164,28 +175,19 @@ class WelcomeWindow(wx.Frame):
             files_not_parsed = []
             count = 0
             for i in range(len(all_files_in_dir)):
-                if all_files_in_dir[i].endswith(
-                        ('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
-                    #            temp = target + '\\' + all_files_in_dir[i]
-                    temp = all_files_dir[i] + '\\' + all_files_in_dir[i]
-                    # current_audiofile = eyed3.load(temp)
+                if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
+                    temp = os.path.join(all_files_dir[i],str(all_files_in_dir[i]))
                     current_audiofile = TinyTag.get(temp)
                     if current_audiofile is not None:
-                        # audio_file_deets[0].append(current_audiofile.tag.artist)
                         curr_artist = replace_special_chars(current_audiofile.artist)
                         if curr_artist == '':
                             curr_artist = None
                             audio_file_deets[0].append(curr_artist)
                         else:
                             audio_file_deets[0].append(curr_artist)
-                        # audio_file_deets[1].append(current_audiofile.tag.title)
                         audio_file_deets[1].append(current_audiofile.title)
-                        # audio_file_deets[2].append(current_audiofile.tag.album)
                         audio_file_deets[2].append(current_audiofile.album)
                         audio_file_deets[3].append(temp)
-                        # temp = current_audiofile.tag.track_num
-                        # audio_file_deets[4].append(temp[0])
-                        # audio_file_deets[5].append(temp[1])
                         audio_file_deets[4].append(current_audiofile.track)
                         audio_file_deets[5].append(current_audiofile.track_total)
                         audio_file_deets[6].append(count)
@@ -194,6 +196,7 @@ class WelcomeWindow(wx.Frame):
                     if current_audiofile == None:
                         files_not_parsed.append(temp)
             return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir
+
 
         '''
         Making a list of all known artist names to use later when creating song
@@ -244,8 +247,10 @@ class WelcomeWindow(wx.Frame):
             os.mkdir(os.path.join(target, 'Arranged files'))
             new_dirs = []
             for i in range(len(folder_titles)):
-                os.mkdir(os.path.join(moveto, folder_titles[i]))
-                new_dirs.append(os.path.join(moveto, folder_titles[i]))
+                temp = os.path.join(moveto, folder_titles[i])
+                if temp.strip().lower() not in new_dirs:
+                    os.mkdir(temp)
+                    new_dirs.append(temp.strip())
             unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
             os.mkdir(os.path.join(moveto, 'Unknown artists'))
             return moveto, new_dirs, unknown_dir
@@ -253,6 +258,8 @@ class WelcomeWindow(wx.Frame):
         '''
         Move files to respective folders
         '''
+        def movefiles():
+            pass
 
         '''
         Delete files while testing
@@ -281,7 +288,7 @@ class WelcomeWindow(wx.Frame):
         '''
 
         def copy_all_unknowns(unknown_songs, unknown_dir):
-            for i in range(len(unknown_songs)):
+            for i in range(len(unknown_songs[1])):
                 shutil.copy(unknown_songs[1][i], unknown_dir)
 
         '''
@@ -316,7 +323,7 @@ class WelcomeWindow(wx.Frame):
 
     def Onfullscreen(self,e):
         self.Maximize(True)
-    
+
     def Onfullscreenexit(self,e):
         self.Maximize(False)
 
@@ -326,8 +333,12 @@ class WelcomeWindow(wx.Frame):
                                 "About Jam arrange", wx.OK)
         dlg.ShowModal() # Show its
         dlg.Destroy() # finally destroy it when finished.
+
     def OnExit(self,e):
         self.Close(True)  # Close the frame.
+
+    def onHelp(self, e):
+        pass
 
 if __name__ == "__main__":
     app = wx.App(False)
