@@ -162,7 +162,8 @@ def making_arranged_dir(target, folder_titles):
         # temp = str(moveto +"//" + str(folder_titles[i]))
         if temp.strip().lower() not in new_dirs:
             os.mkdir(temp)
-            new_dirs.append(temp.strip().lower())
+##            new_dirs.append(temp.strip().lower())
+            new_dirs.append(temp.strip())
     unknown_dir = os.path.join(moveto, 'Unknown artists').strip()
     os.mkdir(os.path.join(moveto, 'Unknown artists'))
     return moveto, new_dirs, unknown_dir
@@ -189,10 +190,6 @@ copy all files to right places
 '''
 
 def copy_to_arranged(new_dirs, song_locations, folder_titles, artist_names, unknown_dir):
-    print len(artist_names)
-    print '\n'
-    print len(folder_titles)
-    
     for i in range(len(artist_names)):
         for j in range(len(folder_titles)):
             str_test = isinstance(artist_names[i], str)
@@ -227,7 +224,7 @@ if __name__ == "__main__":
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
     create_folders = making_arranged_dir(target, handle_files[1])
-    # copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0], create_folders[2])
-    # copy_all_unknowns(handle_files[2], create_folders[2])
+    copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0], create_folders[2])
+    copy_all_unknowns(handle_files[2], create_folders[2])
 
 ##    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
