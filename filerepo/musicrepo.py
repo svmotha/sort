@@ -161,6 +161,15 @@ def movefiles():
     pass
 
 '''
+Delete unknown folder if no unknown songs found
+'''
+def clean_unknown_folder(unknown_songs, unknown_dir):
+    if unknown_songs == [[],[]]:
+        shutil.rmtree(unknown_dir)
+    else:
+        pass
+
+'''
 Delete files while testing
 '''
 
@@ -203,13 +212,12 @@ MAIN CODE AND MAIN FUNCTION
 '''
 
 if __name__ == "__main__":
-    # target = "C:\\Users\\User\\Music\\test folder2"
-    # target = "C:\\Users\\User\\Music\\Hip Hop\\2013 Hit singles\\Release 1.1"
-    target = "/home/victor/Music"
+    target = "/Users/victor/Music/test"
     audio_details = collect_audio(target)
     handle_files = music_handling(audio_details[0])
     create_folders = making_arranged_dir(target, handle_files[1])
     copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0], create_folders[2])
     copy_all_unknowns(handle_files[2], create_folders[2])
+    clean_arranged_folder = clean_unknown_folder(handle_files[2], create_folders[2])
 
 ##    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
