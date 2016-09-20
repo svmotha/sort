@@ -4,7 +4,7 @@ from os import listdir
 from os.path import isfile, join
 
 API_key = 'AxIwHZrcAz'
-root = "home/victor/music/test folder"
+root = "/Users/victor/Music/af"
 path = os.path.join(root, "targetdirectory")
 all_files_in_dir = []
 all_files_dir = []
@@ -18,7 +18,8 @@ for i in range(len(all_files_in_dir)):
     if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma',
                                      '.WMA', '.WAV', '.mp4', '.MP4')) == True:
         # aud_files.append(all_files_dir[i] + "\\" + str(all_files_in_dir[i]))
-        aud_files.apend(os.path.join(all_files_dir[i],str(all_files_in_dir[i])))
+
+        aud_files.append(os.path.join(all_files_dir[i],str(all_files_in_dir[i])))
 '''
 data inaud_data array below:
 0. path

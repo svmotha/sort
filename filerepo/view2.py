@@ -133,6 +133,7 @@ class WelcomeWindow(wx.Frame):
                                     "Arrangement successful", wx.OK)
             dlg.ShowModal()
             dlg.Destroy()
+
         '''
         Repalcing special characters in a dir name
         '''
@@ -265,6 +266,15 @@ class WelcomeWindow(wx.Frame):
             pass
 
         '''
+        Delete unknown folder if no unknown songs found
+        '''
+        def clean_unknown_folder(unknown_songs, unknown_dir):
+            if unknown_songs == [[],[]]:
+                shutil.rmtree(unknown_dir)
+            else:
+                pass
+
+        '''
         Delete files while testing
         '''
 
@@ -318,7 +328,8 @@ class WelcomeWindow(wx.Frame):
             create_folders = making_arranged_dir(target, handle_files[1])
             copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0],create_folders[2])
             copy_all_unknowns(handle_files[2], create_folders[2])
-
+            clean_arranged_folder = clean_unknown_folder(handle_files[2], create_folders[2])
+            
         #    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
             message = "Your songs have been ARRANGED!!!"
             Onbegin(self,message)
