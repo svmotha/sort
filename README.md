@@ -1,20 +1,17 @@
 # jamarrange.io
-![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg)
+![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg) ![python versions supported](https://img.shields.io/badge/python-2.7-brightgreen.svg)
 
-The only media player that knows your music the way you know it.
+Organise, declutter, and sort through all your favourite jams with the power of audio fingerprinting (comming soon).
 
 # Contents
 
-- [Layout design](mediaplayer/layout1.py)
-- [Functionality tests](mediaplayer/source_code.py)
-- [File arrangement](filerepo/musicrepo.py)
-- [Filesorting](documentation/filesorting.md)
-- [Getting to know you](documentation/userlearning.md)
-- [Tutorials](tutorials/readme.md)
+- [Getting started](#getting-started)
+- [File arrangement](#file-arrangement)
+- [Contribution](#contribution)
 
 ---
 ## Getting started
-jamarrange is built on python 2. More specifically 2.7.12. It should work fairly well for python 2.7.10 and 2.7.11 as well.
+jamarrange is built on python 2.7 More specifically 2.7.12. It should work fairly well for most python 2 builds, but has not been tested on these as yet.
 
 ##### WXpython
 jamarrange utilises WXpython for it's GUI capabilities and functionalities. To develop using WXpython modules, simply download and setup WXpython for mac as instructed for your machine and the specific python version you are running on the [following link](https://www.wxpython.org/download.php).
