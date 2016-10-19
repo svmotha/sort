@@ -53,6 +53,7 @@ class WelcomeWindow(wx.Frame):
         # Setting up the menu bars and their various buttons
         filemenu= wx.Menu()
         menuarrange = filemenu.Append(wx.ID_ANY, "&Arrange", "Select a folder with your songs to arrange.")
+        menuDelete = filemenu.Append(wx.ID_ANY, "&Delete", "Delete folders you no longer need.")
         menuAbout = filemenu.Append(wx.ID_ABOUT, "&About", "Learn more about Jam arrange")
         menuExit = filemenu.Append(wx.ID_EXIT,"E&xit","Leave the program :( ")
 
@@ -75,6 +76,7 @@ class WelcomeWindow(wx.Frame):
 
         # Set events.
         self.Bind(wx.EVT_MENU, self.onDir, menuarrange)
+        self.Bind(wx.EVT_MENU, self.onDelete, menuDelete)
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
         self.Bind(wx.EVT_MENU, self.OnExit, menuExit)
 
@@ -117,6 +119,26 @@ class WelcomeWindow(wx.Frame):
         self.SetSizer(main_sizer)
 
         self.Bind(wx.EVT_BUTTON, self.onDir, begin_button)
+
+    '''
+    Deleting any files user selects
+    '''
+    def onDelete(self, event):
+        dlg = wx.DirDialog(self, "Choose a folder to arrange",
+                           style=wx.DD_DEFAULT_STYLE
+                           #| wx.DD_DIR_MUST_EXIST
+                           #| wx.DD_CHANGE_DIR
+                           )
+        if dlg.ShowModal() == wx.ID_OK:
+
+            target = str(dlg.GetPath())
+            # Executing arranging algorithm
+            shutil.rmtree(target)
+
+        #    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
+            message = "Your files have been deleted :("
+            Onbegin(self,message)
+        dlg.Destroy()
 
     '''
     Open operating system directory and select a folder that contains the
@@ -329,7 +351,7 @@ class WelcomeWindow(wx.Frame):
             copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0],create_folders[2])
             copy_all_unknowns(handle_files[2], create_folders[2])
             clean_arranged_folder = clean_unknown_folder(handle_files[2], create_folders[2])
-            
+
         #    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
             message = "Your songs have been ARRANGED!!!"
             Onbegin(self,message)
@@ -356,5 +378,5 @@ class WelcomeWindow(wx.Frame):
 
 if __name__ == "__main__":
     app = wx.App(False)
-    frame = WelcomeWindow(None, "Jam arrange v1.0.1")
+    frame = WelcomeWindow(None, "Jam arrange v0.2.1")
     app.MainLoop()

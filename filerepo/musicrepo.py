@@ -198,7 +198,7 @@ Allowing the audio fingerprinting process to be simplified and centrallised,
 def copy_all_unknowns(unknown_songs, unknown_dir):
     for i in range(len(unknown_songs[1])):
         shutil.copy(unknown_songs[1][i], unknown_dir)
-        
+
 '''
 Rename files: If tags i.e. meta data doesn't match visible file name on pc
 it can be difficult for the user to know what song they are looking at.
@@ -220,4 +220,4 @@ if __name__ == "__main__":
     copy_all_unknowns(handle_files[2], create_folders[2])
     clean_arranged_folder = clean_unknown_folder(handle_files[2], create_folders[2])
 
-##    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
+    delete_arrangement = delete_files(create_folders[0]) #Delete demo files
