@@ -1,5 +1,5 @@
 # jamarrange.io
-[![Latest stable version](https://img.shields.io/badge/version-0.2.4-blue.svg)]
+![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg)
 
 The only media player that knows your music the way you know it.
 
