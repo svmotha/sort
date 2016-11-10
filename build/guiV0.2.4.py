@@ -3,7 +3,7 @@ Jam arrange: GUI linked to arrangement algorithm
 Author: Numstack (Pty) Ltd
 Copyright 2016
 Objective: Through the use of a simple GUI, identify mp3, wav, etc. files and arrange them accordingly in desired local storage folder.
-Current stable version: 0.2.2
+Current stable version: 0.2.4
 '''
 
 '''
@@ -146,5 +146,5 @@ class WelcomeWindow(wx.Frame):
 
 if __name__ == "__main__":
     app = wx.App(False)
-    frame = WelcomeWindow(None, "Jam arrange v0.2.2")
+    frame = WelcomeWindow(None, "Jam arrange v0.2.4")
     app.MainLoop()
