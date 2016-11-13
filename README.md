@@ -1,4 +1,5 @@
-# jamarrange
+![Jam arrange](assets/logos/header v0.2.4.png)
+
 ![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg) ![python versions supported](https://img.shields.io/badge/python-2.7-brightgreen.svg)
 
 jamarrange accurately combs through all your file metadata and uses it to accurately arrange your music.
@@ -84,12 +85,3 @@ Currently jamarrange version 0.2.4 is available as a jamarrange.app file for Mac
 
 ## Contribution
 Want to contribute? Simply fork the latest master repository (stable release and version).
-
----
-# About
-![Numstack™ logo](assets/numstack_logo.png)
-
-This project is continuously created and updated by the Numstack™ team.
-The Numstack team creates applications for people (and the world they live in). They're a group of "academics", that constantly research the impacts of their work on the lives of those around them.
-
-Visit the Numstack website to learn more about the [Numstack team](http://www.numstack.co.za/) and how they are changing your world.
