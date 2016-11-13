@@ -1,4 +1,4 @@
-# jamarrange.io
+# jamarrange
 ![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg) ![python versions supported](https://img.shields.io/badge/python-2.7-brightgreen.svg)
 
 jamarrange accurately combs through all your file metadata and uses it to accurately arrange your music.
@@ -19,7 +19,7 @@ jamarrange is built on python 2.7 More specifically 2.7.12. It should work fairl
 Clone the latest stable release of the master project into your dev directory and start working.
 
 ```
-$ git clone git@github.com:numstack/jamarrange.io.git
+$ git clone git@github.com:numstack/jamarrange.git
 ```
 
 ##### WXpython
