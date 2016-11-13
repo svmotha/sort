@@ -80,7 +80,7 @@ image_data = tag.get_image()
 ```
 
 ## Downloads
-Currently jamarrange version 0.2.4 is available as a jamarrange.app file for Mac users. To download and try the free app [click here](https://github.com/numstack/jamarrange.io/raw/master/downloads/mac/jamarrange.app/Contents/MacOS/jamarrange) or get the file as part of your dev kit when cloning the repository.
+Currently jamarrange version 0.2.4 is available as a jamarrange.app file for Mac users. To download and try the free app [click here](http://www.numstack.co.za/demos/jamarrange/jamarrange.app.zip).
 
 ## Contribution
 Want to contribute? Simply fork the latest master repository (stable release and version).
