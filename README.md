@@ -13,6 +13,13 @@ Organise, declutter, and sort through all your favourite jams with the power of 
 ## Getting started
 jamarrange is built on python 2.7 More specifically 2.7.12. It should work fairly well for most python 2 builds, but has not been tested on these as yet.
 
+##### Clone and begin
+Clone the latest stable release of the master project into your dev directory and start working.
+
+```
+$ git clone git@github.com:numstack/jamarrange.io.git
+```
+
 ##### WXpython
 jamarrange utilises WXpython for it's GUI capabilities and functionalities. To develop using WXpython modules, simply download and setup WXpython for mac as instructed for your machine and the specific python version you are running on the [following link](https://www.wxpython.org/download.php).
 
