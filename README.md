@@ -1,12 +1,14 @@
 # jamarrange.io
 ![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg) ![python versions supported](https://img.shields.io/badge/python-2.7-brightgreen.svg)
 
+jamarrange accurately combs through all your file metadata and uses it to accurately arrange your music.
+
 Organise, declutter, and sort through all your favourite jams with the power of audio fingerprinting (comming soon).
 
 # Contents
 
 - [Getting started](#getting-started)
-- [File arrangement](#file-arrangement)
+- [Downloads](#downloads)
 - [Contribution](#contribution)
 
 ---
@@ -77,8 +79,8 @@ tag = TinyTag.get('/some/music.mp3', image=True)
 image_data = tag.get_image()
 ```
 
-## File arrangement
-jamarrange accurately combs through all your file metadata and uses it to accurately arrange your music.
+## Downloads
+Currently jamarrange version 0.2.4 is available as a jamarrange.app file for Mac users. To download and try the free app [click here]() or get the file as part of your dev kit when cloning the repository.
 
 ## Contribution
 Want to contribute? Simply fork the latest master repository (stable release and version).
