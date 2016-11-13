@@ -1,6 +1,6 @@
 '''
 Jam arrange: Arrangement algorithm
-Author: Numstack (Pty) Ltd
+Author: Jam arrange team
 Copyright 2016
 Objective: Identify mp3, wav, etc. files and arange them accordingly in desired local storage folder.
 '''

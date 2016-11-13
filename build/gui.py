@@ -1,6 +1,6 @@
 '''
 Jam arrange: GUI linked to arrangement algorithm
-Author: Numstack (Pty) Ltd
+Author: Jam arrange team
 Copyright 2016
 Objective: Through the use of a simple GUI, identify mp3, wav, etc. files and arrange them accordingly in desired local storage folder.
 Current stable version: 0.2.4
