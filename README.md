@@ -20,7 +20,7 @@ jamarrange is built on python 2.7 More specifically 2.7.12. It should work fairl
 Clone the latest stable release of the master project into your dev directory and start working.
 
 ```
-$ git clone git@github.com:numstack/jamarrange.git
+$ git clone git@github.com:jamarrange/jamarrange.git
 ```
 
 ##### WXpython

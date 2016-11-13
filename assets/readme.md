@@ -1,4 +1,4 @@
-[← Back to jam arrange docs home (readme)](https://github.com/numstack/jamarrange/blob/master/readme.md)
+[← Back to jam arrange docs home (readme)](https://github.com/jamarrange/jamarrange/blob/master/README.md)
 
 # jam arrange | Assets
 
