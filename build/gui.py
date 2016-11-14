@@ -113,7 +113,7 @@ class WelcomeWindow(wx.Frame):
             '''
             Executing arranging algorithm and timing
             '''
-            start_time = time.time() # purely for test purposes
+            test_time = timer.TimeKeeper().stopWatch()
             audio_details = Sort.collect_audio(target)
             handle_files = Sort.music_handling(audio_details[0])
             create_folders = Sort.making_arranged_dir(target, handle_files[1])
@@ -121,8 +121,9 @@ class WelcomeWindow(wx.Frame):
             Sort.copy_all_unknowns(handle_files[2], create_folders[2])
             clean_arranged_folder = Sort.clean_unknown_folder(handle_files[2], create_folders[2])
             # Displaying time application took to arrange songs, which should be less than a song a second on average.
-            time_taken = round((time.time() - start_time), 2)
+            time_taken = round((timer.TimeKeeper().stopWatch() - test_time), 2)
             message = "Jam arrange took: " + str(time_taken) + "s, to arrange your songs."
+
             Onbegin(self,message)
         dlg.Destroy()
 
