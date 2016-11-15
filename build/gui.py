@@ -109,17 +109,21 @@ class WelcomeWindow(wx.Frame):
         if dlg.ShowModal() == wx.ID_OK:
 
             target = str(dlg.GetPath())
-            Sort = Arranger.Arranger(target)
             '''
             Executing arranging algorithm and timing
             '''
+            Sort = Arranger.Arranger(target_path=target)
+            # Timing process
             test_time = timer.TimeKeeper().stopWatch()
-            audio_details = Sort.collect_audio(target)
+
+            # Sort alogorithm functions
+            audio_details = Sort.collect_audio(Sort.target_path)
             handle_files = Sort.music_handling(audio_details[0])
-            create_folders = Sort.making_arranged_dir(target, handle_files[1])
+            create_folders = Sort.making_arranged_dir(Sort.target_path, handle_files[1])
             Sort.copy_to_arranged(create_folders[1], audio_details[0][3], handle_files[1], handle_files[0],create_folders[2])
             Sort.copy_all_unknowns(handle_files[2], create_folders[2])
             clean_arranged_folder = Sort.clean_unknown_folder(handle_files[2], create_folders[2])
+
             # Displaying time application took to arrange songs, which should be less than a song a second on average.
             time_taken = round((timer.TimeKeeper().stopWatch() - test_time), 2)
             message = "Jam arrange took: " + str(time_taken) + "s, to arrange your songs."

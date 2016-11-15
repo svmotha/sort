@@ -18,10 +18,11 @@ from tinytag import TinyTag
 '''
 Repalcing special characters in file name
 '''
-class Arranger:
+class Arranger(object):
     'Arranging algorithm for jamarrange.'
-    def __init__(self, target_path):
-        self.target_path = target_path
+
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
 
     '''
     Repalcing special characters in a dir name
@@ -74,9 +75,11 @@ class Arranger:
         '''
         audio_file_deets = [[], [], [], [], [], [], []]
         files_not_parsed = []
+        total_files_parsed = 0 # Keeping track of total number of media files in dir
         count = 0
         for i in range(len(all_files_in_dir)):
             if all_files_in_dir[i].endswith(('.mp3', '.wav', '.MP3', '.wma', '.WMA', '.WAV', '.mp4', '.MP4')) == True:
+                total_files_parsed += 1 # counting each find media file
                 temp = os.path.join(all_files_dir[i],str(all_files_in_dir[i]))
                 current_audiofile = TinyTag.get(temp)
                 if current_audiofile is not None:
@@ -96,7 +99,7 @@ class Arranger:
                     audio_files.append(all_files_in_dir[i])
                 if current_audiofile == None:
                     files_not_parsed.append(temp)
-        return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir
+        return audio_file_deets, files_not_parsed, all_files_in_dir, all_files_dir, total_files_parsed
 
     '''
     Making a list of all known artist names to use later when creating song

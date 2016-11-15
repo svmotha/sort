@@ -15,7 +15,7 @@ class TimeKeeper:
         return start_time
 
 
-class Song_second:
+class Song_second(object):
     '''
     Designed to compare time taken to rate of 1 song per second (default
     rate). To change your required rate to any desired rate edit desired
@@ -23,9 +23,12 @@ class Song_second:
     '''
     # global variables
     desiredRate = 1
+    
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
 
-    def __init__(self, currentRate):
-        self.currentRate = currentRate
+    # def __init__(self, currentRate):
+    #     self.currentRate = currentRate
 
     def rateTest(self, currentRate, desiredRate):
         if currentRate >= desiredRate :
