@@ -1,11 +1,10 @@
 '''
-designed to test if application arranges all songs in folder
+|--------------------------------------------------------------------------
+| Testing for all song arrangement:
+|--------------------------------------------------------------------------
+|
+| Designed to test if application arranges all songs in folder.
+|
+| Note this test currently does not exist.
+|
 '''
-import unittest
-
-def fun(x):
-    return x + 1
-
-class MyTest(unittest.TestCase):
-    def test(self):
-        self.assertEqual(fun(3), 4)
