@@ -1,8 +1,8 @@
 ![Jam arrange](assets/logos/header v0.2.4.png)
 
-![Latest stable version](https://img.shields.io/badge/stable%20version-0.2.4-blue.svg) ![python versions supported](https://img.shields.io/badge/python-2.7-brightgreen.svg)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/jamarrange/sort/blob/master/LICENSE) ![python versions supported](https://img.shields.io/badge/python-2.7-brightgreen.svg)
 
-jamarrange accurately combs through all your file metadata and uses it to accurately arrange your music.
+jamarrange is fun way I learned to build a simple python desktop app. It accurately combs through all your file metadata and uses it to accurately arrange your music.
 
 Organise, declutter, and sort through all your favourite jams with the power of audio fingerprinting (comming soon).
 
